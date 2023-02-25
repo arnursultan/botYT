@@ -39,7 +39,7 @@ async def start(message: types.Message):
     await message.answer("Если запутаетесь в командах введите /help")
 
 @dp.message_handler(commands=['help'])
-async def helper(message: types.Message):
+async def help(message: types.Message):
     await message.answer(
         "Вот список команд бота:\n/start - для перезапуска\n/video - для скачивания видео\n/audio - для скачивания аудио из видео")
 
