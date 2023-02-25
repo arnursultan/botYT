@@ -7,7 +7,6 @@ from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 from pytube import YouTube
 import os
 import logging
-import pathlib
 
 load_dotenv("bot.py")
 
