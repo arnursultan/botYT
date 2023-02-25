@@ -51,7 +51,7 @@ class DownloadAudio(StatesGroup):
 
 @dp.message_handler(commands=['audio'])
 async def audio(message: types.Message):
-    await message.reply("Отправьте ссылку на аудио и оно будет скачано.")
+    await message.reply("Отправьте ссылку на аудио, далее начнется закачка")
     await DownloadAudio.downloadaud.set()
 
 @dp.message_handler(state=DownloadAudio.downloadaud)
@@ -78,7 +78,7 @@ async def download_audio(message: types.Message, state: FSMContext):
 
 @dp.message_handler(commands=['video'])
 async def video(message: types.Message):
-    await message.reply("Отправьте ссылку на видео и оно будет скачано.")
+    await message.reply("Отправьте ссылку на видео, далее начнется закачка")
     await DownloadVideo.download.set()
 
 @dp.message_handler(state=DownloadVideo.download)
