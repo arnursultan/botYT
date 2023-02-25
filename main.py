@@ -67,7 +67,7 @@ async def download_audio(message: types.Message, state: FSMContext):
         audio = aud_yt.streams.filter(only_audio=True).first().download('audio', f'{aud_yt.title}.mp3')
 
         try:
-            await message.answer("Отправляем аудио...")
+            await message.answer("Отправляем аудио")
             with open(audio, 'rb') as down_audio:
                 await message.answer_audio(down_audio)
                 os.remove(audio)
@@ -95,7 +95,7 @@ async def download_video(message: types.Message, state: FSMContext):
             'resolution').desc().first().download('video', f"{yt.title}.mp4")
 
         try:
-            await message.answer("Отправляем видео...")
+            await message.answer("Отправляем видео")
             with open(video, 'rb') as down_video:
                 await message.answer_video(down_video)
                 os.remove(video)
