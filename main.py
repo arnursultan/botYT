@@ -110,6 +110,6 @@ async def download_video(message: types.Message, state: FSMContext):
 
 @dp.message_handler()
 async def nothing(message: types.Message):
-    await message.reply("Я вас не понял, введите /help для просмотра доступных функций.")
+    await message.reply("Я вас не понял, введите /help для просмотра доступных функцdfghjий.")
 
 executor.start_polling(dp)
