@@ -7,7 +7,6 @@ from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 from pytube import YouTube
 import os
 import logging
-import pathlib
 
 load_dotenv("bot.py")
 
@@ -38,13 +37,13 @@ def url_valid(url):
 async def start(message: types.Message):
     await message.answer(f'Здравствуйте {message.from_user.full_name}', reply_markup=button)
     await message.answer("Привет! Этот бот создан для скачивания видео или аудио с платформы Youtube.")
-    await message.answer("Если запутаетесь в командах напишите /help")
+    await message.answer("Если запутаетесь в командах введите /help")
 
 
 @dp.message_handler(commands=['help'])
 async def helper(message: types.Message):
     await message.answer(
-        "Вот список команд бота:\n/start - для перезапуска \n/video - для скачивания видео\n/audio - для скачивания аудио из видео")
+        "Вот список команд бота:\n/start - для перезапуска\n/video - для скачивания видео\n/audio - для скачивания аудио из видео")
 
 
 class DownloadVideo(StatesGroup):
