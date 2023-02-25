@@ -71,11 +71,10 @@ async def download_audio(message: types.Message, state: FSMContext):
         except:
             await message.answer("Произошла ошибка при скачивании")
             os.remove(audio)
-        await state.finish()
 
     else:
         await message.reply("Ссылка, которую вы отправили, не является действительной для просмотра видео на YouTube. Пожалуйста, предоставьте действительную ссылку на видео на YouTube.")
-
+        await state.finish()
 @dp.message_handler(commands=['video'])
 async def video(message: types.Message):
     await message.reply("Отправьте ссылку на видео, далее начнется закачка")
@@ -99,11 +98,10 @@ async def download_video(message: types.Message, state: FSMContext):
         except:
             await message.answer("Произошла ошибка при скачивании")
             os.remove(video)
-        await state.finish()
 
     else:
         await message.reply("Ссылка, которую вы отправили, не является действительной для просмотра видео на YouTube. Пожалуйста, предоставьте действительную ссылку на видео на YouTube.")
-
+        await state.finish()
 @dp.message_handler()
 async def nothing(message: types.Message):
     await message.reply("Я вас не понял, введите /help для просмотра доступных функций.")
